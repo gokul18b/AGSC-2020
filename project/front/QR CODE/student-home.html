@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</head>
+
+<body class="bodys">
+    <div data-tabs class="tabs">
+        <div class="tab">
+            <input type="radio" name="tabgroup" id="tab-1" checked>
+            <label for="tab-1">Student Registration</label>
+            <div class="tab__content">
+                <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-body">
+    <p class="card-text">Subject Name.</p>
+  </div>
+</div>
+            </div>
+        </div>
+       
+        <div class="tab">
+            <input type="radio" name="tabgroup" id="tab-4">
+            <label for="tab-4">Logout</label>
+
+        </div>
+    </div>
+</body>
+<script>
+    (function ($, document) {
+
+        // get tallest tab__content element
+        let height = -1;
+
+        $('.tab__content').each(function () {
+            height = height > $(this).outerHeight() ? height : $(this).outerHeight();
+            $(this).css('position', 'absolute');
+        });
+
+        // set height of tabs + top offset
+        $('[data-tabs]').css('min-height', height + 40 + 'px');
+
+    }(jQuery, document));
+</script>
+
+</html>

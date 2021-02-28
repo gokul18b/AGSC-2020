@@ -1,0 +1,68 @@
+<html>
+<head>
+
+    <link href="/bootstrap/bootstrap.css" rel="stylesheet"/>
+    <link href="/home/login.css" rel="stylesheet"/>
+
+
+    <link rel="stylesheet" type="text/css" href="/home/home.css">
+
+
+</head>
+<body>
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-md-offset-5 col-md-4 text-center">
+            <h1 class='text-white'> Textile Management</h1>
+
+            <div class="form-login"></br>
+                <h4>Secure Login</h4>
+                </br>
+                <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="username"/>
+                </br></br>
+                <input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="password"/>
+                </br></br>
+                <div class="wrapper">
+                        <span class="group-btn">
+                            <button onclick="login()" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></button>
+                        </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </br></br></br>
+</div>
+</body>
+<script src="/bootstrap/jquery.min.js"></script>
+<!--<script src="/home/home.js"></script>-->
+<script src="/bootstrap/datatable.min.js"></script>
+<script src="/bootstrap/datatable.bootstrap.min.js"></script>
+<script src="/bootstrap/bootstrap.min.js"></script>
+
+
+<script>
+   function login() {
+       var username = $("#userName").val();
+       var password= $("#userPassword").val();
+
+       $.ajax({
+           type: 'POST',
+           url: '/api/login',
+           data: {
+               username: username,
+               password: password
+           }
+       }).done(function (datas) {
+
+          if(datas[0].count==0){
+              alert("Invalid username and password")
+          }else{
+              window.location="/home"
+          }
+       });
+   }
+</script>
+
+</html>

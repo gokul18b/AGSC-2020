@@ -1,0 +1,269 @@
+<html>
+<head>
+
+    <link href="/bootstrap/bootstrap.css" rel="stylesheet"/>
+    <link href="/bootstrap/datatables.css" rel="stylesheet"/>
+
+
+    <link rel="stylesheet" type="text/css" href="/home/home.css">
+</head>
+<body>
+<div class="container">
+
+    <header>
+        <div id="navbar" class="container-fluid">
+            <div class="container nav-fill w-100">
+                <nav class="navbar navbar-expand-md navbar-light" role="navigation">
+                    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarContent">
+                        <ul class="navbar-nav nav-fill w-100">
+                            <li class="nav-item">
+                                <a href="#htab0"  role="button" class="btn btn-default" data-toggle="tab">Add Customer</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#htab11"  role="button" class="btn btn-default" data-toggle="tab">View Customer</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="#htab1"  role="button" class="btn btn-default" data-toggle="tab">Add Product</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#htab21"  role="button" class="btn btn-default" data-toggle="tab">View Product</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#htab2"  role="button" class="btn btn-default" data-toggle="tab">Purchase</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#htab3"  role="button" class="btn btn-default" data-toggle="tab">Sales</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#htab4"  role="button" class="btn btn-default" data-toggle="tab">Billing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#htab5"  role="button" class="btn btn-default" data-toggle="tab">Stock</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/"  role="button" class="btn btn-default" >Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="tab-content" style="margin: 30px">
+                    <div role="tabpanel" class="tab-pane fade in active" id="htab0">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label>Customer Name:</label>
+                                <input id="name1" type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Mobile Number:</label>
+                                <input id="mobile1" type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Address:</label>
+                                <input id="address1" type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Pincode:</label>
+                                <input id="pincode1" type="text" class="form-control">
+                            </div>
+                            <button onclick="addCustomer()" type="button" class="btn btn-danger">Add Customer</button>
+                        </div>
+
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade in" id="htab11">
+                        <div class="col-sm-8">
+                            <table class="table table-bordered table-dark">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Customer Name</th>
+                                    <th scope="col">Mobile Number</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Pincode</th>
+                                </tr>
+                                </thead>
+                                <tbody id="customerbody">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade in " id="htab1">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label>Company:</label>
+                                <input id="company2" type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Brand:</label>
+                                <input type="text" id="brand2" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Product Name:</label>
+                                <input type="text" id="productname2" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Price:</label>
+                                <input type="text" id="price2" class="form-control">
+                            </div>
+                            <button type="button" onclick="addProduct()" class="btn btn-danger">Add Product
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="htab21">
+                        <div class="col-sm-8">
+                            <table class="table table-bordered table-dark">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Company</th>
+                                    <th scope="col">Brand</th>
+                                    <th scope="col">Product Name</th>
+                                    <th scope="col">Price</th>
+                                </tr>
+                                </thead>
+                                <tbody id="productbody">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="htab2">
+                        <div class="col-sm-4">
+
+                            <div class="form-group">
+                                <label>Select Product name:</label>
+                                <select onchange="loadProductDetails()" class="form-control" id="product3">
+
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Quantity:</label>
+                                <input id="quantity3" type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Company:</label>
+                                <input type="text" id="company3" class="form-control" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>Brand:</label>
+                                <input type="text" class="form-control" id="brand3" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Price:</label>
+                                <input type="text" class="form-control" id="price3" disabled>
+                            </div>
+                            <button onclick="addPurchase()" type="button" class="btn btn-danger">Add Purchase</button>
+
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade in" id="htab3">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label>Mobile Number:</label>
+                                <input id="mobile4" onchange="getCustomerDetails()" type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Customer Name:</label>
+                                <input id="name4" type="text" class="form-control" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>Address:</label>
+                                <input id="address4" type="text" class="form-control" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>Pincode:</label>
+                                <input type="text" id="pincode4" class="form-control" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>Select Product name:</label>
+                                <select id="product4" onchange="loadProductDetails4()" class="form-control">
+
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Quantity:</label>
+                                <input onchange="totalamount()" id="quantity4" type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Company:</label>
+                                <input id="company4" type="text" class="form-control" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>Brand:</label>
+                                <input id="brand4" type="text" class="form-control" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>Price:</label>
+                                <input id="price4" type="text" class="form-control" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>Total Amount:</label>
+                                <input id="total4" type="text" class="form-control" disabled>
+                            </div>
+                            <button onclick="addSales()" type="button" class="btn btn-danger">Add Sales</button>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade in" id="htab4">
+                        <table class="table table-bordered table-dark">
+                            <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Customer Name</th>
+                                <th scope="col">Company Name</th>
+                                <th scope="col">Brand Name</th>
+                                <th scope="col">Product Name</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Total Amount</th>
+                            </tr>
+                            </thead>
+                            <tbody id="billingBody">
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade in" id="htab5">
+                        <table class="table table-bordered table-dark">
+                            <thead>
+                            <tr>
+                                <th scope="col">#</th>
+
+                                <th scope="col">Company Name</th>
+                                <th scope="col">Brand Name</th>
+                                <th scope="col">Product Name</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Stock</th>
+
+                            </tr>
+                            </thead>
+                            <tbody id="stockBody">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="/bootstrap/jquery.min.js"></script>
+<script src="/home/home.js"></script>
+<script src="/bootstrap/datatable.min.js"></script>
+<script src="/bootstrap/datatable.bootstrap.min.js"></script>
+<script src="/bootstrap/bootstrap.min.js"></script>
+
+</html>
