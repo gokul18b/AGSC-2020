@@ -1,0 +1,83 @@
+<html>
+
+<head>
+
+    <link href="/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="/bootstrap/datatables.css" rel="stylesheet" />
+
+
+    <link rel="stylesheet" type="text/css" href="./login.css">
+</head>
+
+<body>
+    <div class="container">
+       
+        <header>
+            <h1>Login </h1>
+            
+        </header>
+        <section>				
+            <div id="container_demo" >
+                <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+                <a class="hiddenanchor" id="toregister"></a>
+                <a class="hiddenanchor" id="tologin"></a>
+                <div id="wrapper">
+                    <div id="login" class="animate form">
+
+                            <h1>Project Tracking</h1>
+                            <p> 
+                                <label for="username" class="uname" > Your email or username </label>
+                                <input id="username" name="username" required="required" type="text" placeholder="myusername or mymail@mail.com"/>
+                            </p>
+                            <p> 
+                                <label for="password" class="youpasswd"> Your password </label>
+                                <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" /> 
+                            </p>
+
+                            <p class="change_link">
+
+                                <button onclick="login()" class="to_register">Login</button>
+                            </p>
+
+                    </div>
+
+
+                    
+                </div>
+            </div>  
+        </section>
+    </div>
+</body>
+<script src="./jquery.js"></script>
+<script src="./login.js"></script>
+<script src="/bootstrap/datatable.min.js"></script>
+<script src="/bootstrap/datatable.bootstrap.min.js"></script>
+<script src="/bootstrap/bootstrap.min.js"></script>
+
+<script>
+    function login() {
+        var username = $("#username").val();
+        var password= $("#password").val();
+
+        $.ajax({
+            type: 'GET',
+            url: 'http://localhost:8080/api/login/'+username+"/"+password,
+            data: {
+                username: username,
+                password: password
+            }
+        }).done(function (data) {
+            if(data=='admin'){
+				 console.log(data);
+				window.location = "/admin-home.html";
+			}else if(data=='Invalid'){
+				alert('Invalid username please enter valid username and password')	
+			}else{
+				window.location.href = "/2020/AGSC/QR CODE/student-home.html?"+data;
+			}
+            
+        });
+            
+    }
+</script>
+</html>

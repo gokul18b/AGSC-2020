@@ -28,75 +28,83 @@
             <section id="content1">
                 <div class="form-group">
                     <label>Student Name</label>
-                    <input class="form-control" id="exampleInputPassword1">
+                    <input class="form-control" id="1">
                 </div>
                 <div class="form-group">
                     <label>Roll Number</label>
-                    <input class="form-control" id="exampleInputPassword1">
+                    <input class="form-control" id="2">
                 </div>
                 <div class="form-group">
                     <label>Department</label>
-                    <input class="form-control" id="exampleInputPassword1">
+                    <input class="form-control" id="3">
                 </div>
 				<div class="form-group">
                     <label>Class</label>
-                    <input class="form-control" id="exampleInputPassword1">
+                    <input class="form-control" id="4">
                 </div>
                 <div class="form-group">
                     <label>Guide Name</label>
-                    <input class="form-control" id="exampleInputPassword1">
+                    <input class="form-control" id="5">
                 </div>
                 <div class="form-group">
                     <label>Mobile number</label>
-                    <input class="form-control" id="exampleInputPassword1">
+                    <input class="form-control" id="6">
+                </div> 
+                <div class="form-group">
+                    <label>Username</label>
+                    <input class="form-control" id="7">
+                </div> 
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" id="8">
                 </div>               
-                <button type="submit" class="btn btn-primary">Register Student</button>
+                <button id="student_register" type="submit" class="btn btn-primary">Register Student</button>
             </section>
             <section id="content2">
                 <div class="form-group">
                     <label>Title Name</label>
-                    <input class="form-control" id="exampleInputPassword1">
+                    <input class="form-control" id="11">
                 </div>
                 <div class="form-group">
                     <label>Description</label>
-                    <input class="form-control" id="exampleInputPassword1">
+                    <input class="form-control" id="12">
                 </div>
                 <div class="form-group">
                     <label>Modules</label>
-                    <input class="form-control" id="exampleInputPassword1">
+                    <input class="form-control" id="13">
                 </div>
 				<div class="form-group">
                     <label>Technologies</label>
-                    <input class="form-control" id="exampleInputPassword1">
+                    <input class="form-control" id="14">
                 </div>
-                <button type="submit" class="btn btn-primary">Register Project</button>
+                <button id="project_register" type="submit" class="btn btn-primary">Register Project</button>
             </section>
             <section id="content3">
 				<div class="form-group">
                     <label>Student Name</label>
-                    <select class="form-control">
+                    <select id="21" class="form-control">
 					  <option>Default select</option>
 					</select>
                 </div>
 				<div class="form-group">
                     <label>Project Title</label>
-                    <select class="form-control">
+                    <select id="22" class="form-control">
 					  <option>Default select</option>
 					</select>
                 </div>
 				<div class="form-group">
                     <label>Description</label>
-                    <input class="form-control" id="exampleInputPassword1">
+                    <input class="form-control" id="23" disabled>
                 </div>
 				<div class="form-group">
                     <label>Modules</label>
-                    <input class="form-control" id="exampleInputPassword1">
+                    <input class="form-control" id="24" disabled>
                 </div>
 				<div class="form-group">
                     <label>Technologies</label>
-                    <input class="form-control" id="exampleInputPassword1">
+                    <input class="form-control" id="25" disabled>
                 </div>
-				<button type="submit" class="btn btn-primary">Allocate Project</button>
+				<button id="allocate_project" type="submit" class="btn btn-primary">Allocate Project</button>
             </section>
             <section id="content4">
 				<table class="table table-bordered">
@@ -110,15 +118,8 @@
                             <th scope="col">Project status</th>                            
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>xxxxx</td>
-                            <td>xxxxx</td>
-                            <td>xxxxx</td>
-                            <td>xxxxx</td>
-                            <td><button type="submit" class="btn btn-primary">Completed</button></td>
-                        </tr>
+                    <tbody id="project_body">
+                        
 
                     </tbody>
                 </table>
@@ -129,9 +130,9 @@
         </footer>
     </main>
 </body>
-<script>
+
+<script src="./admin-home.js"></script>
 
 
-</script>
 
 </html>

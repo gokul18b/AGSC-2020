@@ -8,6 +8,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+		<script type="text/javascript" src="qrcode.js"></script>
+		<style>
+.qrcode {
+  width:160px;
+  height:160px;
+  margin-top:15px;
+}
+</style>
 </head>
 
 <body class="bodys">
@@ -18,33 +26,33 @@
             <div class="tab__content">
                 <div class="form-group">
                     <label>First Name</label>
-                    <input class="form-control" id="exampleInputPassword1">
+                    <input id="one" class="form-control" id="exampleInputPassword1">
                 </div>
                 <div class="form-group">
                     <label>Last Name</label>
-                    <input class="form-control" id="exampleInputPassword1">
+                    <input id="two" class="form-control" id="exampleInputPassword1">
                 </div>
                 <div class="form-group">
                     <label>Roll No</label>
-                    <input class="form-control" id="exampleInputPassword1">
+                    <input id="three" class="form-control" id="exampleInputPassword1">
                 </div>
                 <div class="form-group">
                     <label>Department</label>
-                    <input class="form-control" id="exampleInputPassword1">
+                    <input id="four" class="form-control" id="exampleInputPassword1">
                 </div>
                 <div class="form-group">
                     <label>Class Name</label>
-                    <input class="form-control" id="exampleInputPassword1">
+                    <input id="five" class="form-control" id="exampleInputPassword1">
                 </div>
 				<div class="form-group">
                     <label>Username</label>
-                    <input class="form-control" id="exampleInputPassword1">
+                    <input id="six" class="form-control" id="exampleInputPassword1">
                 </div>
 				<div class="form-group">
                     <label>Password</label>
-                    <input class="form-control" id="exampleInputPassword1">
+                    <input id="seven" class="form-control" id="exampleInputPassword1">
                 </div>
-                <button type="submit" class="btn btn-primary">Regiter Student</button>
+                <button id="student_register" type="submit" class="btn btn-primary">Regiter Student</button>
             </div>
         </div>
         <div class="tab">
@@ -53,21 +61,21 @@
             <div class="tab__content">
                 <div class="form-group">
                     <label>Roll No</label>
-                    <input class="form-control" id="exampleInputPassword1">
+                    <input id="one2" class="form-control" id="exampleInputPassword1">
                 </div>
                 <div class="form-group">
                     <label>Subject Name</label>
-                    <input class="form-control" id="exampleInputPassword1">
+                    <input id="two2" class="form-control" id="exampleInputPassword1">
                 </div>
                 <div class="form-group">
                     <label>Exam Hall No</label>
-                    <input class="form-control" id="exampleInputPassword1">
+                    <input id="three2" class="form-control" id="exampleInputPassword1">
                 </div>
                 <div class="form-group">
                     <label>Exam Date</label>
-                    <input class="form-control" id="exampleInputPassword1">
+                    <input id="four2" class="form-control" id="exampleInputPassword1">
                 </div>
-                <button type="submit" class="btn btn-primary">Create Member</button>
+                <button id="add_hallticket" type="submit" class="btn btn-primary">Create Member</button>
             </div>
         </div>
         <div class="tab">
@@ -81,13 +89,12 @@
                         <th scope="col">Roll No</th>
 						<th scope="col">Student Name</th>
                         <th scope="col">Hall Ticket Number</th>
-						<th scope="col">QR Code</th>
-                        
+						<th scope="col">QR Code</th>                    
                        
                         
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="ticket_body">
                     <tr>
                         <th scope="row">1</th>
                         <td>xxxxx</td>
@@ -125,5 +132,5 @@
 
     }(jQuery, document));
 </script>
-
+<script src="./admin-home.js"></script>
 </html>

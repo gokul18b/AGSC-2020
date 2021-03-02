@@ -14,11 +14,14 @@ var knex = require('knex')({
 
 /* GET users listing. */
 router.post('/addCustomer', function (req, res, next) {
+
     var name = req.body.name;
     var mobile = req.body.mobile;
     var address = req.body.address;
     var pincode = req.body.pincode;
+
     var insert_customer = "INSERT INTO `customer` (`id`, `name`, `mobile`, `address`, `pincode`) VALUES (NULL, '" + name + "', '" + mobile + "', '" + address + "', '" + pincode + "');";
+console.log(insert_customer )
     knex.raw(insert_customer).then((datas) => {
         res.send('Customer has been created');
     });

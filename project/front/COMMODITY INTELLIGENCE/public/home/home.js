@@ -1,6 +1,7 @@
 // Material Design example
 $(document).ready(function () {
     update();
+
 });
 function update() {
     showCustomerList();
@@ -9,6 +10,7 @@ function update() {
     showStock();
 }
 function addCustomer() {
+
     var name = $("#name1").val();
     var mobile = $("#mobile1").val();
     var address = $("#address1").val();
